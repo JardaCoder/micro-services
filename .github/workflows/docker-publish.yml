@@ -18,8 +18,8 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v2
         with:
-          java-version: '17'
-          distribution: 'adopt'
+          java-version: "17"
+          distribution: "adopt"
 
       - name: Build Eureka Naming Server Container Image
         working-directory: ./naming-server
@@ -36,7 +36,11 @@ jobs:
       - name: Build Book Microservice Jar
         working-directory: ./book-service
         run: mvn clean package -DskipTests
-        
+
+      - name: Build Admin Microservice Jar
+        working-directory: ./admin
+        run: mvn clean package -DskipTests
+
       - name: Docker Compose Build
         working-directory: .
         run: docker-compose build
@@ -49,6 +53,7 @@ jobs:
           docker tag ${{ secrets.DOCKER_USERNAME }}/api-gateway:0.0.1-SNAPSHOT ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest
           docker tag ${{ secrets.DOCKER_USERNAME }}/cambio-service:latest ${{ secrets.DOCKER_USERNAME }}/cambio-service:${{github.run_id}}
           docker tag ${{ secrets.DOCKER_USERNAME }}/book-service:latest ${{ secrets.DOCKER_USERNAME }}/book-service:${{github.run_id}}
+          docker tag ${{ secrets.DOCKER_USERNAME }}/microservice-admin:latest ${{ secrets.DOCKER_USERNAME }}/microservice-admin:${{github.run_id}}
           docker push ${{ secrets.DOCKER_USERNAME }}/naming-server:${{github.run_id}}
           docker push ${{ secrets.DOCKER_USERNAME }}/naming-server:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/api-gateway:${{github.run_id}}
@@ -57,3 +62,5 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/cambio-service:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/book-service:${{github.run_id}}
           docker push ${{ secrets.DOCKER_USERNAME }}/book-service:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/microservice-admin:${{github.run_id}}
+          docker push ${{ secrets.DOCKER_USERNAME }}/microservice-admin:latest
