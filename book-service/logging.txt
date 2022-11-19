@@ -1,0 +1,108 @@
+2022-11-19 00:10:11.488  INFO [book-service,,] 64044 --- [main] c.j.b.BookServiceApplicationTests        : Starting BookServiceApplicationTests using Java 17.0.1 on usuario-desktop with PID 64044 (started by usuario in /home/usuario/Documentos/micro-services/book-service)
+2022-11-19 00:10:11.491  INFO [book-service,,] 64044 --- [main] c.j.b.BookServiceApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2022-11-19 00:10:12.581  INFO [book-service,,] 64044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-19 00:10:12.675  INFO [book-service,,] 64044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interfaces.
+2022-11-19 00:10:13.045  INFO [book-service,,] 64044 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0f2b4a16-0cd4-3cbd-9154-dd9ce67f149d
+2022-11-19 00:10:13.633  INFO [book-service,,] 64044 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2022-11-19 00:10:13.634  INFO [book-service,,] 64044 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2022-11-19 00:10:13.634  INFO [book-service,,] 64044 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2022-11-19 00:10:13.870  INFO [book-service,,] 64044 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://localhost:3306/book_service (MySQL 8.0)
+2022-11-19 00:10:13.908  INFO [book-service,,] 64044 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.019s)
+2022-11-19 00:10:13.924  INFO [book-service,,] 64044 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema `book_service`: 2
+2022-11-19 00:10:13.925  INFO [book-service,,] 64044 --- [main] o.f.core.internal.command.DbMigrate      : Schema `book_service` is up to date. No migration necessary.
+2022-11-19 00:10:14.056  INFO [book-service,,] 64044 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-19 00:10:14.098  INFO [book-service,,] 64044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-19 00:10:14.195  INFO [book-service,,] 64044 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-19 00:10:14.257  INFO [book-service,,] 64044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-19 00:10:14.283  INFO [book-service,,] 64044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-19 00:10:14.292  INFO [book-service,,] 64044 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-11-19 00:10:14.653  INFO [book-service,,] 64044 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-19 00:10:14.659  INFO [book-service,,] 64044 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-19 00:10:15.331  WARN [book-service,,] 64044 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-19 00:10:15.743  INFO [book-service,,] 64044 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'cambio-service' URL not provided. Will try picking an instance via load-balancing.
+2022-11-19 00:10:19.086  INFO [book-service,,] 64044 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-11-19 00:10:19.381  WARN [book-service,,] 64044 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-11-19 00:10:19.476  INFO [book-service,,] 64044 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 30 endpoint(s) beneath base path '/actuator'
+2022-11-19 00:10:19.526  INFO [book-service,,] 64044 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-11-19 00:10:19.576  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-11-19 00:10:19.579  INFO [book-service,,] 64044 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-11-19 00:10:19.594  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-11-19 00:10:19.594  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-11-19 00:10:19.594  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-11-19 00:10:19.594  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-11-19 00:10:19.594  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-11-19 00:10:19.594  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-11-19 00:10:19.595  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-11-19 00:10:19.695  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-11-19 00:10:19.698  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-11-19 00:10:19.700  INFO [book-service,,] 64044 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-11-19 00:10:19.703  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1668827419702 with initial instances count: 2
+2022-11-19 00:10:19.715  INFO [book-service,,] 64044 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BOOK-SERVICE with eureka with status UP
+2022-11-19 00:10:19.715  INFO [book-service,,] 64044 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1668827419715, current=UP, previous=STARTING]
+2022-11-19 00:10:19.716  INFO [book-service,,] 64044 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOK-SERVICE/usuario-desktop.lan:book-service:8100: registering service...
+2022-11-19 00:10:19.742  INFO [book-service,,] 64044 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOK-SERVICE/usuario-desktop.lan:book-service:8100 - registration status: 204
+2022-11-19 00:10:19.743  INFO [book-service,,] 64044 --- [main] c.j.b.BookServiceApplicationTests        : Started BookServiceApplicationTests in 8.568 seconds (JVM running for 9.255)
+2022-11-19 00:10:19.754 ERROR [book-service,,] 64044 --- [registrationTask1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+java.lang.IllegalStateException: couldn't determine local port. Please set spring.boot.admin.client.instance.service-base-url.
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getLocalServerPort(DefaultApplicationFactory.java:192) ~[spring-boot-admin-client-2.7.7.jar:2.7.7]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getServiceBaseUrl(DefaultApplicationFactory.java:104) ~[spring-boot-admin-client-2.7.7.jar:2.7.7]
+	at de.codecentric.boot.admin.client.registration.ServletApplicationFactory.getServiceUrl(ServletApplicationFactory.java:63) ~[spring-boot-admin-client-2.7.7.jar:2.7.7]
+	at de.codecentric.boot.admin.client.registration.ServletApplicationFactory.getManagementBaseUrl(ServletApplicationFactory.java:76) ~[spring-boot-admin-client-2.7.7.jar:2.7.7]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getHealthUrl(DefaultApplicationFactory.java:154) ~[spring-boot-admin-client-2.7.7.jar:2.7.7]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.createApplication(DefaultApplicationFactory.java:80) ~[spring-boot-admin-client-2.7.7.jar:2.7.7]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationRegistrator.register(DefaultApplicationRegistrator.java:56) ~[spring-boot-admin-client-2.7.7.jar:2.7.7]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.23.jar:5.3.23]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-19 00:10:19.889  INFO [book-service,,] 64044 --- [Thread-3] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
+2022-11-19 00:10:19.891  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BOOK-SERVICE with eureka with status DOWN
+2022-11-19 00:10:19.891  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1668827419891, current=DOWN, previous=UP]
+2022-11-19 00:10:19.892  INFO [book-service,,] 64044 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOK-SERVICE/usuario-desktop.lan:book-service:8100: registering service...
+2022-11-19 00:10:19.898  INFO [book-service,,] 64044 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOK-SERVICE/usuario-desktop.lan:book-service:8100 - registration status: 204
+2022-11-19 00:10:20.932  WARN [book-service,,] 64044 --- [SpringApplicationShutdownHook] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'registrationListener': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:220) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.getTargetBean(ApplicationListenerMethodAdapter.java:371) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:336) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:229) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:166) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:427) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1058) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:99) ~[spring-cloud-context-3.1.5.jar:3.1.5]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.5.jar:2.7.5]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.5.jar:2.7.5]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-19 00:10:20.934  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-19 00:10:20.936  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-19 00:10:20.942  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-19 00:10:20.942  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-11-19 00:10:23.943  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-11-19 00:10:23.948  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOK-SERVICE/usuario-desktop.lan:book-service:8100 - deregister  status: 200
+2022-11-19 00:10:23.952  INFO [book-service,,] 64044 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
