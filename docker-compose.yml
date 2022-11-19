@@ -63,17 +63,32 @@ services:
     networks:
       - jarda-network
 
+  microservice-admin:
+    image: jardelschaefer/microservice-admin:latest
+    restart: always
+    build:
+      context: .
+      dockerfile: admin/Dockerfile
+    ports:
+      - 9090:9090
+    depends_on:
+      - naming-server
+    networks:
+      - jarda-network
+
   naming-server:
-    image: jardelschaefer/naming-server:0.0.1-SNAPSHOT
+    image: jardelschaefer/naming-server:latest
     depends_on:
       - rabbit-mq
+    environment:
+      SPRING_BOOT_ADMIN_CLIENT_URL: http://microservice-admin:9090
     ports:
       - 8761:8761
     networks:
       - jarda-network
 
   api-gateway:
-    image: jardelschaefer/api-gateway:0.0.1-SNAPSHOT
+    image: jardelschaefer/api-gateway:latest
     ports:
       - 8765:8765
     depends_on:
@@ -85,11 +100,12 @@ services:
       RABBIT_URI: amqp://guest:guest@rabbit-mq:5672
       SPRING_RABBITMQ_HOST: rabbit-mq
       SPRING_ZIPKIN_SENDER_TYPE: rabbit
+      SPRING_BOOT_ADMIN_CLIENT_URL: http://microservice-admin:9090
     networks:
       - jarda-network
 
   cambio-service:
-    image: jardelschaefer/cambio-service
+    image: jardelschaefer/cambio-service:latest
     restart: always
     build:
       context: .
@@ -107,6 +123,7 @@ services:
       SPRING.FLYWAY.URL: jdbc:mysql://cambio-db:3308/cambio_service?useSSL=false&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2
       SPRING.FLYWAY.USER: root
       SPRING.FLYWAY.PASSWORD: admin123
+      SPRING_BOOT_ADMIN_CLIENT_URL: http://microservice-admin:9090
     ports:
       - 8000:8000
     depends_on:
@@ -117,7 +134,7 @@ services:
       - jarda-network
 
   book-service:
-    image: jardelschaefer/book-service
+    image: jardelschaefer/book-service:latest
     restart: always
     build:
       context: .
@@ -135,6 +152,7 @@ services:
       SPRING.FLYWAY.URL: jdbc:mysql://book-db:3310/book_service?useSSL=false&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2
       SPRING.FLYWAY.USER: root
       SPRING.FLYWAY.PASSWORD: admin123
+      SPRING_BOOT_ADMIN_CLIENT_URL: http://microservice-admin:9090
     ports:
       - 8100:8100
     depends_on:
