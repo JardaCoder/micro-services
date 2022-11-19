@@ -125,7 +125,7 @@ services:
       SPRING.FLYWAY.PASSWORD: admin123
       SPRING_BOOT_ADMIN_CLIENT_URL: http://microservice-admin:9090
     ports:
-      - 8000:8000
+      - 8000-8002:8000
     depends_on:
       - naming-server
       - cambio-db

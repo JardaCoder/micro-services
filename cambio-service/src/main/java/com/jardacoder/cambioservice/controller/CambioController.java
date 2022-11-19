@@ -2,6 +2,9 @@ package com.jardacoder.cambioservice.controller;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -34,18 +37,19 @@ public class CambioController {
 	@GetMapping("/{amount}/{from}/{to}")
 	public Cambio getCambio(@PathVariable BigDecimal amount,
 			@PathVariable String from,
-			@PathVariable String to ) {
+			@PathVariable String to ) throws UnknownHostException {
 		
 		Cambio cambio = cambioRepository.findByFromAndTo(from, to)
 				.orElseThrow(() -> new RuntimeException("Currency Unsupported"));
 	
 		log.info("getCambio is called witg -> {}, {} and {}", amount, from, to);
 		var applicationPort = environment.getProperty("local.server.port");
+		var localHost = InetAddress.getLocalHost(); 
 		
 		BigDecimal conversionFactor = cambio.getConversionFactor();
 		BigDecimal convertedValue = conversionFactor.multiply(amount).setScale(2, RoundingMode.CEILING);
 		
-		cambio.setEnvironment(applicationPort);
+		cambio.setEnvironment(String.format("host: %s  name: %s", localHost.getHostAddress(), localHost.getHostName()));
 		cambio.setConvertedValue(convertedValue);
 		
 		return cambio;
