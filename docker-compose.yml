@@ -105,7 +105,7 @@ services:
       - jarda-network
 
   cambio-service:
-    image: jardelschaefer/cambio-service:latest
+    image: jardelschaefer/cambio-service:3504075429
     restart: always
     build:
       context: .
